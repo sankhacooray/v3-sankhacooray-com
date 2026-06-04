@@ -6,9 +6,8 @@
 (function () {
   "use strict";
 
-  // ⚠️ Paste your deployed Apps Script web-app URL here (ends in /exec).
-  // Until set, the form shows a friendly fallback and links to LinkedIn.
-  var APPS_SCRIPT_URL = "";
+  // Deployed Apps Script web-app URL (ends in /exec). See contact-sankhacooray-com.
+  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzVh7KHZDVkO29XaSiF1zP7LqvwzPy_5yPs4GN4aAofezUaaWaSt36MAwxty_CXe_aSlQ/exec";
 
   var form    = document.getElementById("contactForm");
   if (!form) return;
