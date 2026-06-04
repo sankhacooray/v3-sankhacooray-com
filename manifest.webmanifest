@@ -1,0 +1,12 @@
+{
+  "name": "Sankha Cooray — Developer & Innovator",
+  "short_name": "Sankha Cooray",
+  "description": "Portfolio of Sankha Cooray — software engineer working in AR/MR, games and applied R&D.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

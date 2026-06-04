@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sankha Cooray — Developer & Innovator</title>
+  <meta name="description" content="Sankha Cooray — software engineer and innovator working at the seam of the physical and digital: augmented & mixed reality, games, and applied R&D." />
+  <meta name="author" content="Sankha Cooray" />
+  <meta name="keywords" content="Sankha Cooray, Software Engineer, Innovator, Augmented Reality, Mixed Reality, Game Developer, R&D, Unity, XR" />
+  <meta name="theme-color" content="#0b0d12" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sankha Cooray — Developer & Innovator" />
+  <meta property="og:description" content="Software engineer working at the seam of the physical and digital: AR/MR, games, and applied R&D." />
+  <meta property="og:url" content="https://v3.sankhacooray.com/" />
+  <meta property="og:image" content="https://v3.sankhacooray.com/images/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sankha Cooray — Developer & Innovator" />
+  <meta name="twitter:description" content="Software engineer working at the seam of the physical and digital: AR/MR, games, and applied R&D." />
+  <meta name="twitter:image" content="https://v3.sankhacooray.com/images/profile.jpg" />
+
+  <link rel="canonical" href="https://v3.sankhacooray.com/" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <!-- Set theme before paint to avoid a flash of the wrong theme -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('sc-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'daylight' : 'midnight';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Sankha Cooray — home">
+      <span class="brand-mark" aria-hidden="true">SC</span>
+      <span class="brand-name">Sankha Cooray</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <!-- Theme switcher -->
+      <div class="theme-switch" id="themeSwitch">
+        <button class="theme-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change theme">
+          <span class="theme-swatch" aria-hidden="true"></span>
+          <span class="theme-label">Theme</span>
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 4l3 3 3-3" /></svg>
+        </button>
+        <ul class="theme-menu" role="listbox" aria-label="Theme" hidden>
+          <li role="option" data-theme="midnight"><span class="dot dot-midnight"></span>Midnight</li>
+          <li role="option" data-theme="aurora"><span class="dot dot-aurora"></span>Aurora</li>
+          <li role="option" data-theme="daylight"><span class="dot dot-daylight"></span>Daylight</li>
+          <li role="option" data-theme="sand"><span class="dot dot-sand"></span>Sand</li>
+        </ul>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Software Engineer · Innovator</p>
+          <h1 class="hero-title">Building at the seam of the<br /><span class="grad">physical &amp; digital</span>.</h1>
+          <p class="hero-sub">
+            I'm Sankha — a creative engineer who blends real-world objects with digital content.
+            Nine years across augmented &amp; mixed reality, games, and applied R&amp;D, turning
+            unconventional ideas into shipped products.
+          </p>
+          <div class="hero-meta">
+            <span class="chip-loc"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.3-7-11a7 7 0 0 1 14 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Singapore</span>
+            <span class="chip-loc"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg> Open to opportunities</span>
+          </div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#projects">View my work</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+          <ul class="hero-social">
+            <li><a href="https://www.linkedin.com/in/sanka-cooray-5129b243/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/sankhacooray" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://medium.com/@bsc2fast" target="_blank" rel="noopener">Medium</a></li>
+          </ul>
+        </div>
+
+        <div class="hero-photo reveal">
+          <div class="photo-frame">
+            <img src="images/profile.jpg" alt="Sankha Cooray" width="400" height="400" loading="eager" />
+          </div>
+          <div class="photo-badge">
+            <span class="pb-num">9+</span>
+            <span class="pb-label">years building</span>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="Scroll to about">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="section-head reveal">
+        <span class="section-kicker">01 — About</span>
+        <h2 class="section-title">A self-motivated, creative developer</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-lead reveal">
+          <p>
+            I love implementing new, unique concepts — researching real problems in the computer
+            industry and building creative solutions with innovative ideas. My particular passion is
+            connecting and blending real-world objects with digital content to make software that's
+            more productive and more delightful to use.
+          </p>
+          <p>
+            Alongside engineering, I bring strong skills in planning and organising events and
+            experiences, and a deep enthusiasm for developing augmented reality applications and games.
+            I also write about ideas and experiments on
+            <a href="https://medium.com/@bsc2fast" target="_blank" rel="noopener">Medium</a>.
+          </p>
+        </div>
+        <ul class="about-facts reveal">
+          <li><span class="af-k">Focus</span><span class="af-v">AR / MR · Games · Applied R&amp;D</span></li>
+          <li><span class="af-k">Experience</span><span class="af-v">9+ years engineering</span></li>
+          <li><span class="af-k">Based in</span><span class="af-v">Singapore</span></li>
+          <li><span class="af-k">Writes on</span><span class="af-v">Medium</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section" id="experience">
+      <div class="section-head reveal">
+        <span class="section-kicker">02 — Experience</span>
+        <h2 class="section-title">Where I've worked</h2>
+      </div>
+      <ol class="timeline">
+        <li class="t-item reveal">
+          <div class="t-dot" aria-hidden="true"></div>
+          <div class="t-body">
+            <div class="t-top">
+              <h3 class="t-role">Software Engineer — R&amp;D</h3>
+              <span class="t-when">2018 — Present</span>
+            </div>
+            <p class="t-org">Embla Software Innovation</p>
+            <p class="t-desc">Joined the company's new R&amp;D unit, leading a number of research projects and delivering new releases quarterly — augmented &amp; mixed-reality apps, games and prototypes.</p>
+          </div>
+        </li>
+        <li class="t-item reveal">
+          <div class="t-dot" aria-hidden="true"></div>
+          <div class="t-body">
+            <div class="t-top">
+              <h3 class="t-role">Software Engineer — Full-Stack</h3>
+              <span class="t-when">2017 — 2018</span>
+            </div>
+            <p class="t-org">Embla Software Innovation</p>
+            <p class="t-desc">After gaining experience I was promoted to SE, owning live web projects and initiating a series of research projects that grew into the R&amp;D practice.</p>
+          </div>
+        </li>
+        <li class="t-item reveal">
+          <div class="t-dot" aria-hidden="true"></div>
+          <div class="t-body">
+            <div class="t-top">
+              <h3 class="t-role">Associate Software Engineer</h3>
+              <span class="t-when">2016 — 2017</span>
+            </div>
+            <p class="t-org">Embla Software Innovation</p>
+            <p class="t-desc">Where my career started, fresh out of university — building and shipping live web projects with Angular and .NET.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="edu-block reveal">
+        <h3 class="edu-head">Education</h3>
+        <ul class="edu-list">
+          <li><span class="edu-y">2015</span><div><strong>B.Sc. — Physical Science</strong><span>University of Sri Jayewardenepura · Maths, Physics &amp; Computer Science</span></div></li>
+          <li><span class="edu-y">2010</span><div><strong>G.C.E. Advanced Level</strong><span>Taxila Central College</span></div></li>
+          <li><span class="edu-y">2007</span><div><strong>G.C.E. Ordinary Level</strong><span>Wadduwa Central College</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="section-head reveal">
+        <span class="section-kicker">03 — Projects</span>
+        <h2 class="section-title">Selected work</h2>
+        <p class="section-intro">A mix of shipped XR experiences, games and web platforms. Hover or tap a card to read more.</p>
+      </div>
+
+      <div class="filters reveal" id="filters" role="tablist" aria-label="Filter projects">
+        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter" data-filter="xr" role="tab" aria-selected="false">XR &amp; AR</button>
+        <button class="filter" data-filter="games" role="tab" aria-selected="false">Games</button>
+        <button class="filter" data-filter="web" role="tab" aria-selected="false">Web</button>
+      </div>
+
+      <div class="proj-grid" id="projGrid">
+
+        <article class="proj reveal" data-cat="xr">
+          <div class="proj-card">
+            <div class="pc-front">
+              <img src="images/proj-graffiti.jpg" alt="Graffiti AR" loading="lazy" />
+              <div class="pc-overlay">
+                <span class="pc-tag">XR · Mixed Reality</span>
+                <h3>Graffiti AR</h3>
+                <p>Interactive graffiti wall</p>
+              </div>
+            </div>
+            <div class="pc-back">
+              <h3>Graffiti AR</h3>
+              <p>A mixed-reality app that turns a physical graffiti wall into an interactive, immersive experience — 3D spatial audio, animations and augmented seasonal &amp; birthday greetings. Tapping a drawing reveals its artist and a music track.</p>
+              <a href="https://play.google.com/store/apps/details?id=com.BSCLabs.GraffityWall&hl=en_US" target="_blank" rel="noopener">Google Play ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-cat="xr">
+          <div class="proj-card">
+            <div class="pc-front">
+              <img src="images/proj-mrobot.jpg" alt="Mobitel MRobot" loading="lazy" />
+              <div class="pc-overlay">
+                <span class="pc-tag">XR · Augmented Reality</span>
+                <h3>Mobitel MRobot</h3>
+                <p>Google IO Sri Lanka 2018</p>
+              </div>
+            </div>
+            <div class="pc-back">
+              <h3>Mobitel MRobot</h3>
+              <p>The official AR app for Mobitel at Google IO 2018. Augments a dancing robot in front of event banners; visitors take photos, share to Twitter, and change the dance by tapping the robot.</p>
+              <a href="https://play.google.com/store/apps/details?id=com.BSCLabs.MobitelAR&hl=en" target="_blank" rel="noopener">Google Play ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-cat="xr">
+          <div class="proj-card">
+            <div class="pc-front">
+              <img src="images/proj-seedforum.jpg" alt="SeedForum AR" loading="lazy" />
+              <div class="pc-overlay">
+                <span class="pc-tag">XR · Augmented Reality</span>
+                <h3>SeedForum AR</h3>
+                <p>Pitch room · Oslo Opera House</p>
+              </div>
+            </div>
+            <div class="pc-back">
+              <h3>SeedForum AR</h3>
+              <p>An augmented-reality pitch room built for the Seed Forum Global Conference 2018 at the Oslo Opera House. Each company logo unlocks a pre-recorded power-pitch video for participants.</p>
+              <a href="https://www.seedforum.global/index.php/apps" target="_blank" rel="noopener">Learn more ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-cat="games">
+          <div class="proj-card">
+            <div class="pc-front">
+              <img src="images/proj-dartsar.jpg" alt="DartsAR" loading="lazy" />
+              <div class="pc-overlay">
+                <span class="pc-tag">Game · Mixed Reality</span>
+                <h3>DartsAR</h3>
+                <p>Cross-platform multiplayer</p>
+              </div>
+            </div>
+            <div class="pc-back">
+              <h3>DartsAR</h3>
+              <p>A mixed-reality game that blends the ancient game of darts with modern tech — throw digital darts at a physical board, with cross-platform multiplayer and an AI opponent ("GAAI Fiyona") for single-player. Context-sensitive guides via multiple tracking technologies.</p>
+              <a href="https://www.dartsar.com" target="_blank" rel="noopener">dartsar.com ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-cat="games">
+          <div class="proj-card">
+            <div class="pc-front">
+              <img src="images/proj-emonplay.jpg" alt="EmonPlay" loading="lazy" />
+              <div class="pc-overlay">
+                <span class="pc-tag">Game · Augmented Reality</span>
+                <h3>EmonPlay</h3>
+                <p>Indoor AR hunting game</p>
+              </div>
+            </div>
+            <div class="pc-back">
+              <h3>EmonPlay</h3>
+              <p>An augmented-reality indoor hunting game designed to be played around the office — find as many "Emons" as you can against the clock, with a live count, countdown and game history.</p>
+              <a href="https://apps.apple.com/us/app/emon-play/id1445123965" target="_blank" rel="noopener">App Store ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-cat="web">
+          <div class="proj-card">
+            <div class="pc-front">
+              <img src="images/proj-familytreasure.jpg" alt="Embla Family Treasure" loading="lazy" />
+              <div class="pc-overlay">
+                <span class="pc-tag">Web · Platform</span>
+                <h3>Embla Family Treasure</h3>
+                <p>Genealogy web program</p>
+              </div>
+            </div>
+            <div class="pc-back">
+              <h3>Embla Family Treasure</h3>
+              <p>A Norwegian web application for genealogists. Capture family history and render it as fan charts, artistic trees and a tree editor, with dedicated editors for individuals, families, places, events and sources.</p>
+              <a href="https://www.embla.no" target="_blank" rel="noopener">embla.no ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-cat="web">
+          <div class="proj-card">
+            <div class="pc-front">
+              <img src="images/proj-webshop.jpg" alt="Embla Webshop" loading="lazy" />
+              <div class="pc-overlay">
+                <span class="pc-tag">Web · Commerce</span>
+                <h3>Embla Webshop</h3>
+                <p>Purchase &amp; licensing</p>
+              </div>
+            </div>
+            <div class="pc-back">
+              <h3>Embla Webshop</h3>
+              <p>A companion to Embla FT for buying version upgrades and membership activation — checkout through the Nets payment gateway, plus invoicing options for users without Nets.</p>
+              <a href="https://shop.embla.no" target="_blank" rel="noopener">shop.embla.no ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-cat="web">
+          <div class="proj-card">
+            <div class="pc-front">
+              <img src="images/proj-dartsar-web.jpg" alt="DartsAR website" loading="lazy" />
+              <div class="pc-overlay">
+                <span class="pc-tag">Web · Marketing</span>
+                <h3>DartsAR Web</h3>
+                <p>Official game site</p>
+              </div>
+            </div>
+            <div class="pc-back">
+              <h3>DartsAR Web</h3>
+              <p>The official DartsAR website — game details and instructions, downloadable gameplay materials, a promotional video and social links.</p>
+              <a href="https://www.dartsar.com" target="_blank" rel="noopener">dartsar.com ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <div class="section-head reveal">
+        <span class="section-kicker">04 — Skills</span>
+        <h2 class="section-title">What I work with</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-cat reveal">
+          <h3>Spatial &amp; XR</h3>
+          <ul class="tags">
+            <li>Unity3D</li><li>Mixed Reality</li><li>Augmented Reality</li><li>Virtual Reality</li><li>ARKit</li><li>ARCore</li>
+          </ul>
+        </div>
+        <div class="skill-cat reveal">
+          <h3>Engineering</h3>
+          <ul class="tags">
+            <li>C#</li><li>TypeScript</li><li>.NET</li><li>Angular</li><li>Node.js</li><li>Web</li>
+          </ul>
+        </div>
+        <div class="skill-cat reveal">
+          <h3>Games</h3>
+          <ul class="tags">
+            <li>Game Development</li><li>Multiplayer</li><li>3D Spatial Audio</li><li>Real-time Tracking</li>
+          </ul>
+        </div>
+        <div class="skill-cat reveal">
+          <h3>Research &amp; Hardware</h3>
+          <ul class="tags">
+            <li>HCI</li><li>IoT &amp; Robotics</li><li>Brain–Computer Interfaces</li><li>Computer Vision</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="recognition reveal">
+        <h3 class="rec-head">Recognition</h3>
+        <ul class="rec-list">
+          <li><span class="rec-y">2018</span> Special Appreciation Award · Embla</li>
+          <li><span class="rec-y">2017</span> Summer Spot Award · Embla</li>
+          <li><span class="rec-y">—</span> Innovation Helper · official AR app</li>
+          <li><span class="rec-y">2004</span> Championship (U15)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section section-contact" id="contact">
+      <div class="contact-wrap">
+        <div class="contact-intro reveal">
+          <span class="section-kicker">05 — Contact</span>
+          <h2 class="section-title">Let's build something</h2>
+          <p>Have a project, a role, or just an idea worth exploring? Drop me a message and I'll get back to you. No phone numbers or inboxes to dig for — just send a note below.</p>
+          <ul class="contact-links">
+            <li><a href="https://www.linkedin.com/in/sanka-cooray-5129b243/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="https://github.com/sankhacooray" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a href="https://medium.com/@bsc2fast" target="_blank" rel="noopener">Medium ↗</a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <fieldset id="formFields">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="200" placeholder="Your name" />
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com" />
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required maxlength="5000" placeholder="What's on your mind?"></textarea>
+            </div>
+            <!-- Honeypot: hidden from humans, catches bots -->
+            <div class="hp" aria-hidden="true">
+              <label for="cf-company">Company</label>
+              <input id="cf-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+          </fieldset>
+          <button class="btn btn-primary btn-submit" id="submitBtn" type="submit">
+            <span class="label">Send message</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-success" id="contactSuccess" hidden>
+          <div class="cs-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3>Message sent</h3>
+          <p>Thanks for reaching out — I'll get back to you soon.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="brand-mark sm" aria-hidden="true">SC</span>
+      <p class="foot-name">Sankha Cooray</p>
+      <p class="foot-tag">Developer &amp; Innovator · Singapore</p>
+      <ul class="foot-social">
+        <li><a href="https://www.linkedin.com/in/sanka-cooray-5129b243/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/sankhacooray" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://medium.com/@bsc2fast" target="_blank" rel="noopener">Medium</a></li>
+      </ul>
+      <p class="foot-copy">© <span id="year">2026</span> Sankha Cooray. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
