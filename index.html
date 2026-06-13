@@ -261,159 +261,162 @@
       <div class="section-head reveal">
         <span class="section-kicker">03 — Projects</span>
         <h2 class="section-title">Selected work</h2>
-        <p class="section-intro">A mix of shipped XR experiences, games and web platforms. Hover or tap a card to read more.</p>
+        <p class="section-intro">Products and research spanning interactive hardware, wearables, mobile, web platforms and applied AI — built end-to-end, from firmware and SDKs to shipped apps and cloud backends.</p>
       </div>
 
       <div class="filters reveal" id="filters" role="tablist" aria-label="Filter projects">
         <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="filter" data-filter="xr" role="tab" aria-selected="false">XR &amp; AR</button>
-        <button class="filter" data-filter="games" role="tab" aria-selected="false">Games</button>
+        <button class="filter" data-filter="hardware" role="tab" aria-selected="false">Hardware &amp; XR</button>
+        <button class="filter" data-filter="mobile" role="tab" aria-selected="false">Mobile</button>
         <button class="filter" data-filter="web" role="tab" aria-selected="false">Web</button>
+        <button class="filter" data-filter="ai" role="tab" aria-selected="false">AI</button>
+        <button class="filter" data-filter="research" role="tab" aria-selected="false">Research</button>
       </div>
 
       <div class="proj-grid" id="projGrid">
 
-        <article class="proj reveal" data-cat="xr">
-          <div class="proj-card">
-            <div class="pc-front">
-              <img src="images/proj-graffiti.jpg" alt="Graffiti AR" loading="lazy" />
-              <div class="pc-overlay">
-                <span class="pc-tag">XR · Mixed Reality</span>
-                <h3>Graffiti AR</h3>
-                <p>Interactive graffiti wall</p>
-              </div>
+        <article class="proj reveal" data-cat="hardware">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">Hardware · Product</span>
+              <span class="pcard-role">Founder · full-stack</span>
             </div>
-            <div class="pc-back">
-              <h3>Graffiti AR</h3>
-              <p>A mixed-reality app that turns a physical graffiti wall into an interactive, immersive experience — 3D spatial audio, animations and augmented seasonal &amp; birthday greetings. Tapping a drawing reveals its artist and a music track.</p>
-              <a href="https://play.google.com/store/apps/details?id=com.BSCLabs.GraffityWall&hl=en_US" target="_blank" rel="noopener">Google Play ↗</a>
-            </div>
+            <h3 class="pcard-title">Stakco</h3>
+            <p class="pcard-desc">A patent-pending rotating-ring puzzle turned into a cross-platform product — twelve sensor-driven web PWAs, a native Android app and a standalone Galaxy Watch build, a Unity simulator, and a React creator studio &amp; webshop, all sharing one puzzle engine.</p>
+            <ul class="pcard-tech"><li>React</li><li>Kotlin</li><li>Unity</li><li>Web Bluetooth</li><li>Wear OS</li><li>GCP</li></ul>
+            <a class="pcard-link" href="https://stakcos.com" target="_blank" rel="noopener">stakcos.com ↗</a>
           </div>
         </article>
-
-        <article class="proj reveal" data-cat="xr">
-          <div class="proj-card">
-            <div class="pc-front">
-              <img src="images/proj-mrobot.jpg" alt="Mobitel MRobot" loading="lazy" />
-              <div class="pc-overlay">
-                <span class="pc-tag">XR · Augmented Reality</span>
-                <h3>Mobitel MRobot</h3>
-                <p>Google IO Sri Lanka 2018</p>
-              </div>
+        <article class="proj reveal" data-cat="hardware">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">Hardware · EdTech · SDK</span>
+              <span class="pcard-role">Full-stack engineer</span>
             </div>
-            <div class="pc-back">
-              <h3>Mobitel MRobot</h3>
-              <p>The official AR app for Mobitel at Google IO 2018. Augments a dancing robot in front of event banners; visitors take photos, share to Twitter, and change the dance by tapping the robot.</p>
-              <a href="https://play.google.com/store/apps/details?id=com.BSCLabs.MobitelAR&hl=en" target="_blank" rel="noopener">Google Play ↗</a>
-            </div>
+            <h3 class="pcard-title">Kiwrious</h3>
+            <p class="pcard-desc">A STEM-education platform built around USB science sensors — a TypeScript Web Serial SDK (published to npm, with a WASM ARM emulator for heart-rate firmware) powering a Vue inquiry editor, a zero-build measurement tool, and a Scratch coding playground.</p>
+            <ul class="pcard-tech"><li>TypeScript</li><li>Web Serial</li><li>WASM</li><li>Vue</li><li>Fastify</li><li>Cloud Run</li></ul>
+            <a class="pcard-link" href="https://kiwrious.com" target="_blank" rel="noopener">kiwrious.com ↗</a>
           </div>
         </article>
-
-        <article class="proj reveal" data-cat="xr">
-          <div class="proj-card">
-            <div class="pc-front">
-              <img src="images/proj-seedforum.jpg" alt="SeedForum AR" loading="lazy" />
-              <div class="pc-overlay">
-                <span class="pc-tag">XR · Augmented Reality</span>
-                <h3>SeedForum AR</h3>
-                <p>Pitch room · Oslo Opera House</p>
-              </div>
+        <article class="proj reveal" data-cat="hardware">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">Hardware · IoT · SDK</span>
+              <span class="pcard-role">Platform engineer</span>
             </div>
-            <div class="pc-back">
-              <h3>SeedForum AR</h3>
-              <p>An augmented-reality pitch room built for the Seed Forum Global Conference 2018 at the Oslo Opera House. Each company logo unlocks a pre-recorded power-pitch video for participants.</p>
-              <a href="https://www.seedforum.global/index.php/apps" target="_blank" rel="noopener">Learn more ↗</a>
-            </div>
+            <h3 class="pcard-title">iTiles</h3>
+            <p class="pcard-desc">Interactive BLE floor &amp; wall tiles with light, sound and vibration — one wire protocol implemented across three SDKs (Web Bluetooth/TypeScript on npm, Android/Kotlin, Unity/C#), plus games and a unified docs site.</p>
+            <ul class="pcard-tech"><li>TypeScript</li><li>Web Bluetooth</li><li>Kotlin</li><li>Unity</li><li>npm</li></ul>
+            <span class="pcard-link muted">Web · Android · Unity SDK</span>
           </div>
         </article>
-
-        <article class="proj reveal" data-cat="games">
-          <div class="proj-card">
-            <div class="pc-front">
-              <img src="images/proj-dartsar.jpg" alt="DartsAR" loading="lazy" />
-              <div class="pc-overlay">
-                <span class="pc-tag">Game · Mixed Reality</span>
-                <h3>DartsAR</h3>
-                <p>Cross-platform multiplayer</p>
-              </div>
+        <article class="proj reveal" data-cat="mobile">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">Mobile · Assistive AI</span>
+              <span class="pcard-role">Mobile + backend</span>
             </div>
-            <div class="pc-back">
-              <h3>DartsAR</h3>
-              <p>A mixed-reality game that blends the ancient game of darts with modern tech — throw digital darts at a physical board, with cross-platform multiplayer and an AI opponent ("GAAI Fiyona") for single-player. Context-sensitive guides via multiple tracking technologies.</p>
-              <a href="https://www.dartsar.com" target="_blank" rel="noopener">dartsar.com ↗</a>
-            </div>
+            <h3 class="pcard-title">AiSee</h3>
+            <p class="pcard-desc">A wearable AI assistant and guided-tour system for blind and low-vision users — native iOS (SwiftUI) and Android (Jetpack Compose) tour-guide apps with on-device narration, a multi-tenant backend with an HMAC login broker, and a WCAG 2.1 AA marketing site.</p>
+            <ul class="pcard-tech"><li>SwiftUI</li><li>Jetpack Compose</li><li>Google Maps</li><li>Apps Script</li><li>WCAG AA</li></ul>
+            <a class="pcard-link" href="https://glass.aisee.ai" target="_blank" rel="noopener">glass.aisee.ai ↗</a>
           </div>
         </article>
-
-        <article class="proj reveal" data-cat="games">
-          <div class="proj-card">
-            <div class="pc-front">
-              <img src="images/proj-emonplay.jpg" alt="EmonPlay" loading="lazy" />
-              <div class="pc-overlay">
-                <span class="pc-tag">Game · Augmented Reality</span>
-                <h3>EmonPlay</h3>
-                <p>Indoor AR hunting game</p>
-              </div>
+        <article class="proj reveal" data-cat="research">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">Research · Affective computing</span>
+              <span class="pcard-role">Systems + ML</span>
             </div>
-            <div class="pc-back">
-              <h3>EmonPlay</h3>
-              <p>An augmented-reality indoor hunting game designed to be played around the office — find as many "Emons" as you can against the clock, with a live count, countdown and game history.</p>
-              <a href="https://apps.apple.com/us/app/emon-play/id1445123965" target="_blank" rel="noopener">App Store ↗</a>
-            </div>
+            <h3 class="pcard-title">EmoDrink</h3>
+            <p class="pcard-desc">An affect-aware beverage recommender that reads physiological signals from a Garmin wearable — Android/iOS apps, a FastAPI inference service running PyTorch/XGBoost models over HRV and sleep data, and an experience-sampling survey app. Accepted as a CHI 2026 poster.</p>
+            <ul class="pcard-tech"><li>Kotlin</li><li>Garmin SDK</li><li>FastAPI</li><li>PyTorch</li><li>XGBoost</li><li>Firebase</li></ul>
+            <span class="pcard-link muted">CHI 2026 · NUS × Asahi</span>
           </div>
         </article>
-
+        <article class="proj reveal" data-cat="mobile">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">Mobile · Voice AI</span>
+              <span class="pcard-role">Mobile + backend</span>
+            </div>
+            <h3 class="pcard-title">Kavy</h3>
+            <p class="pcard-desc">A voice-driven conversation-practice app — a React Native client with speech-to-text and text-to-speech talking to an OpenAI chat engine, backed by a containerized TypeScript/Express analytics API on Cloud Run.</p>
+            <ul class="pcard-tech"><li>React Native</li><li>OpenAI</li><li>Node / Express</li><li>MongoDB</li><li>Cloud Run</li></ul>
+            <a class="pcard-link" href="https://www.kavi.ai" target="_blank" rel="noopener">kavi.ai ↗</a>
+          </div>
+        </article>
+        <article class="proj reveal" data-cat="research">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">Research · EdTech platform</span>
+              <span class="pcard-role">Full-stack + mobile</span>
+            </div>
+            <h3 class="pcard-title">CHILL · SPARK</h3>
+            <p class="pcard-desc">An instructor–student learning platform and behavioural-study system at NUS — a Next.js app with an adaptive-quiz engine and AI content tools, a React Native study companion with push and live activities, and an AI pipeline that turns slide decks into narrated videos. Deployed on AWS ECS via Terraform.</p>
+            <ul class="pcard-tech"><li>Next.js</li><li>React Native</li><li>Prisma</li><li>AWS ECS</li><li>Terraform</li><li>OpenAI</li></ul>
+            <span class="pcard-link muted">NUS · research platform</span>
+          </div>
+        </article>
         <article class="proj reveal" data-cat="web">
-          <div class="proj-card">
-            <div class="pc-front">
-              <img src="images/proj-familytreasure.jpg" alt="Embla Family Treasure" loading="lazy" />
-              <div class="pc-overlay">
-                <span class="pc-tag">Web · Platform</span>
-                <h3>Embla Family Treasure</h3>
-                <p>Genealogy web program</p>
-              </div>
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">Web · Platform</span>
+              <span class="pcard-role">Full-stack engineer</span>
             </div>
-            <div class="pc-back">
-              <h3>Embla Family Treasure</h3>
-              <p>A Norwegian web application for genealogists. Capture family history and render it as fan charts, artistic trees and a tree editor, with dedicated editors for individuals, families, places, events and sources.</p>
-              <a href="https://www.embla.no" target="_blank" rel="noopener">embla.no ↗</a>
-            </div>
+            <h3 class="pcard-title">Augmented Human Lab</h3>
+            <p class="pcard-desc">The research lab's web ecosystem — a from-scratch JSON-driven static-site generator, a Workspace login/identity broker, LLM usage-governance dashboards, Apple Wallet membership passes, and a GA4 analytics proxy — spanning Apps Script, GCP Cloud Functions and GitHub Pages.</p>
+            <ul class="pcard-tech"><li>Node.js</li><li>Apps Script</li><li>GCP Functions</li><li>GA4 API</li><li>Apple Wallet</li></ul>
+            <a class="pcard-link" href="https://ahlab.org" target="_blank" rel="noopener">ahlab.org ↗</a>
           </div>
         </article>
-
-        <article class="proj reveal" data-cat="web">
-          <div class="proj-card">
-            <div class="pc-front">
-              <img src="images/proj-webshop.jpg" alt="Embla Webshop" loading="lazy" />
-              <div class="pc-overlay">
-                <span class="pc-tag">Web · Commerce</span>
-                <h3>Embla Webshop</h3>
-                <p>Purchase &amp; licensing</p>
-              </div>
+        <article class="proj reveal" data-cat="ai">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">AI · Dev tool</span>
+              <span class="pcard-role">Creator</span>
             </div>
-            <div class="pc-back">
-              <h3>Embla Webshop</h3>
-              <p>A companion to Embla FT for buying version upgrades and membership activation — checkout through the Nets payment gateway, plus invoicing options for users without Nets.</p>
-              <a href="https://shop.embla.no" target="_blank" rel="noopener">shop.embla.no ↗</a>
-            </div>
+            <h3 class="pcard-title">Scratch-GPT</h3>
+            <p class="pcard-desc">Turns plain-English prompts into valid Scratch projects — an LLM emits a small intermediate representation, then a deterministic compiler and validator produce guaranteed-valid .sb3 files. Pluggable Anthropic / OpenAI backends.</p>
+            <ul class="pcard-tech"><li>Node.js</li><li>Anthropic Claude</li><li>OpenAI</li><li>Compilers</li></ul>
+            <span class="pcard-link muted">LLM · code-gen</span>
           </div>
         </article>
-
         <article class="proj reveal" data-cat="web">
-          <div class="proj-card">
-            <div class="pc-front">
-              <img src="images/proj-dartsar-web.jpg" alt="DartsAR website" loading="lazy" />
-              <div class="pc-overlay">
-                <span class="pc-tag">Web · Marketing</span>
-                <h3>DartsAR Web</h3>
-                <p>Official game site</p>
-              </div>
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">Web · Health data</span>
+              <span class="pcard-role">Creator</span>
             </div>
-            <div class="pc-back">
-              <h3>DartsAR Web</h3>
-              <p>The official DartsAR website — game details and instructions, downloadable gameplay materials, a promotional video and social links.</p>
-              <a href="https://www.dartsar.com" target="_blank" rel="noopener">dartsar.com ↗</a>
+            <h3 class="pcard-title">Vitals</h3>
+            <p class="pcard-desc">A live self-tracked metabolic dashboard surfacing every metric a Withings Body Scan records — vascular age, visceral fat, segmental composition — through a secret-masking serverless proxy.</p>
+            <ul class="pcard-tech"><li>Apps Script</li><li>Withings API</li><li>SVG charts</li><li>OAuth2</li></ul>
+            <a class="pcard-link" href="https://vitals.sankhacooray.com" target="_blank" rel="noopener">vitals.sankhacooray.com ↗</a>
+          </div>
+        </article>
+        <article class="proj reveal" data-cat="ai">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">AI · Nutrition</span>
+              <span class="pcard-role">Creator</span>
             </div>
+            <h3 class="pcard-title">Mixlab</h3>
+            <p class="pcard-desc">A drink-formulation playground that mixes ingredients and analyses the result — macro/micronutrients, compound interactions and condition-specific health alerts computed live from a curated nutrition knowledge base.</p>
+            <ul class="pcard-tech"><li>JavaScript</li><li>Data modelling</li><li>SVG viz</li></ul>
+            <a class="pcard-link" href="https://mixlab.sankhacooray.com" target="_blank" rel="noopener">mixlab.sankhacooray.com ↗</a>
+          </div>
+        </article>
+        <article class="proj reveal" data-cat="hardware">
+          <div class="pcard">
+            <div class="pcard-top">
+              <span class="pcard-tag">XR · Game</span>
+              <span class="pcard-role">Founder</span>
+            </div>
+            <h3 class="pcard-title">DartsAR</h3>
+            <p class="pcard-desc">A cross-platform mixed-reality dart game — throw digital darts at a physical board with cross-platform multiplayer and an AI opponent, using multiple tracking technologies. Taken from concept to a shipped game, brand and website.</p>
+            <ul class="pcard-tech"><li>Unity</li><li>AR / MR</li><li>Multiplayer</li><li>C#</li></ul>
+            <a class="pcard-link" href="https://www.dartsar.com" target="_blank" rel="noopener">dartsar.com ↗</a>
           </div>
         </article>
 
@@ -428,38 +431,38 @@
       </div>
       <div class="skills-grid">
         <div class="skill-cat reveal">
-          <h3>Spatial &amp; XR</h3>
-          <ul class="tags">
-            <li>Unity3D</li><li>Mixed Reality</li><li>Augmented Reality</li><li>Virtual Reality</li><li>ARKit</li><li>ARCore</li>
-          </ul>
+          <h3>Languages</h3>
+          <ul class="tags"><li>TypeScript</li><li>Python</li><li>C#</li><li>Kotlin</li><li>Swift</li><li>JavaScript</li></ul>
         </div>
         <div class="skill-cat reveal">
-          <h3>Engineering</h3>
-          <ul class="tags">
-            <li>C#</li><li>TypeScript</li><li>.NET</li><li>Angular</li><li>Node.js</li><li>Web</li>
-          </ul>
+          <h3>Web &amp; Frontend</h3>
+          <ul class="tags"><li>React</li><li>Next.js</li><li>Vue</li><li>Vite</li><li>Tailwind</li><li>PWA</li><li>WebGL</li><li>Web Bluetooth / Serial / MIDI</li></ul>
         </div>
         <div class="skill-cat reveal">
-          <h3>Games</h3>
-          <ul class="tags">
-            <li>Game Development</li><li>Multiplayer</li><li>3D Spatial Audio</li><li>Real-time Tracking</li>
-          </ul>
+          <h3>Mobile &amp; Wearables</h3>
+          <ul class="tags"><li>iOS · SwiftUI</li><li>Android · Kotlin</li><li>Jetpack Compose</li><li>React Native · Expo</li><li>Wear OS</li><li>Garmin SDK</li><li>BLE</li></ul>
         </div>
         <div class="skill-cat reveal">
-          <h3>Research &amp; Hardware</h3>
-          <ul class="tags">
-            <li>HCI</li><li>IoT &amp; Robotics</li><li>Brain–Computer Interfaces</li><li>Computer Vision</li>
-          </ul>
+          <h3>Cloud &amp; Backend</h3>
+          <ul class="tags"><li>GCP · Cloud Run / Functions / GKE</li><li>AWS · ECS</li><li>Firebase</li><li>Docker</li><li>Terraform</li><li>PostgreSQL</li><li>MongoDB</li><li>Fastify / Express / FastAPI</li></ul>
+        </div>
+        <div class="skill-cat reveal">
+          <h3>AI &amp; ML</h3>
+          <ul class="tags"><li>Anthropic Claude</li><li>OpenAI</li><li>PyTorch</li><li>XGBoost</li><li>LLM apps &amp; agents</li><li>Generative media</li></ul>
+        </div>
+        <div class="skill-cat reveal">
+          <h3>Hardware, XR &amp; Research</h3>
+          <ul class="tags"><li>Unity</li><li>IoT / embedded · ESP32</li><li>Physiological sensing</li><li>AR / MR</li><li>HCI</li><li>CHI · UIST</li></ul>
         </div>
       </div>
 
       <div class="recognition reveal">
         <h3 class="rec-head">Recognition</h3>
         <ul class="rec-list">
+          <li><span class="rec-y">2026</span> CHI &amp; UIST 2026 · research contributions</li>
           <li><span class="rec-y">2018</span> Special Appreciation Award · Embla</li>
           <li><span class="rec-y">2017</span> Summer Spot Award · Embla</li>
           <li><span class="rec-y">—</span> Innovation Helper · official AR app</li>
-          <li><span class="rec-y">2004</span> Championship (U15)</li>
         </ul>
       </div>
     </section>
