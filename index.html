@@ -54,6 +54,7 @@
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#network">Network</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -515,6 +516,35 @@
       </div>
     </section>
 
+    <!-- ===================== NETWORK ===================== -->
+    <section class="section" id="network" hidden>
+      <div class="section-head reveal">
+        <span class="section-kicker">06 — Network</span>
+        <h2 class="section-title">The live network</h2>
+        <p class="section-intro">A constellation of small sites and experiments across <code>sankhacooray.com</code>, all reporting into one place. Here's how busy they are right now.</p>
+      </div>
+
+      <div class="net-wrap reveal">
+        <div class="net-top">
+          <div class="net-live" id="netLive">
+            <span class="net-dot" aria-hidden="true"></span>
+            <span class="net-live-num" id="netLiveNum">—</span>
+            <span class="net-live-label">active across the network now</span>
+          </div>
+          <ul class="net-totals">
+            <li><span class="nt-num" id="netSites">—</span><span class="nt-k">sites</span></li>
+            <li><span class="nt-num" id="netToday">—</span><span class="nt-k">today</span></li>
+            <li><span class="nt-num" id="net7d">—</span><span class="nt-k">7 days</span></li>
+            <li><span class="nt-num" id="net30d">—</span><span class="nt-k">30 days</span></li>
+          </ul>
+        </div>
+
+        <ol class="net-board" id="netBoard" aria-label="Sites ranked by visitors over the last 30 days"></ol>
+        <p class="net-empty" id="netEmpty" hidden>The network is just getting started — per-site stats will appear here as visitors arrive.</p>
+        <p class="net-foot" id="netFoot"></p>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===================== FOOTER ===================== -->
@@ -534,6 +564,7 @@
 
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/network.js"></script>
 <script async src="https://sankhacooray.com/js/sankha-analytics.js"></script>
 </body>
 </html>
