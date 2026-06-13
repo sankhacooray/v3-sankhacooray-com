@@ -356,14 +356,19 @@ img { display: block; max-width: 100%; }
 
 .pcard {
   display: flex; flex-direction: column; height: 100%;
-  padding: 24px 24px 22px;
   border: 1px solid var(--border); border-radius: 16px;
-  background: var(--surface);
+  background: var(--surface); overflow: hidden;
   transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 @media (hover: hover) {
   .pcard:hover { border-color: var(--border-2); transform: translateY(-3px); box-shadow: var(--shadow); }
 }
+.pcard-img { width: 100%; aspect-ratio: 1.9 / 1; background: var(--surface-2); border-bottom: 1px solid var(--border); overflow: hidden; }
+.pcard-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s ease; }
+.pcard-img.contain { display: flex; align-items: center; justify-content: center; }
+.pcard-img.contain img { object-fit: contain; padding: 16px; }
+@media (hover: hover) { .pcard:hover .pcard-img img { transform: scale(1.04); } }
+.pcard-body { display: flex; flex-direction: column; flex: 1; padding: 22px 22px 20px; }
 .pcard-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 13px; }
 .pcard-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); }
 .pcard-role { font-size: 11px; color: var(--text-mute); white-space: nowrap; }
