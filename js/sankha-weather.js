@@ -70,16 +70,35 @@
   }
 
   // ───────────────────────── location ──────────────────────────────
+  // IP → approximate location, no key, no permission prompt. Providers
+  // are tried in order; each must send CORS headers on a browser GET.
+  // (ipwho.is was dropped — it now blocks CORS on its free plan.)
+  var GEO_PROVIDERS = [
+    { url: 'https://get.geojs.io/v1/ip/geo.json', parse: function (d) {
+        return d && d.latitude != null
+          ? { lat: +d.latitude, lon: +d.longitude, city: d.city || '' } : null;
+      } },
+    { url: 'https://ipapi.co/json/', parse: function (d) {
+        return d && !d.error && d.latitude != null
+          ? { lat: +d.latitude, lon: +d.longitude, city: d.city || '' } : null;
+      } }
+  ];
+
   function locate() {
     var cached = cacheGet('sc-wx-loc', CONFIG.LOCATION_TTL);
     if (cached) return Promise.resolve(cached);
-    return fetchJson('https://ipwho.is/')
-      .then(function (d) {
-        if (!d || d.success === false || d.latitude == null) throw 'geo';
-        var loc = { lat: d.latitude, lon: d.longitude, city: d.city || '' };
-        cacheSet('sc-wx-loc', loc);
-        return loc;
-      });
+    return tryGeo(0);
+  }
+
+  function tryGeo(i) {
+    if (i >= GEO_PROVIDERS.length) return Promise.reject('geo');
+    var p = GEO_PROVIDERS[i];
+    return fetchJson(p.url).then(function (d) {
+      var loc = p.parse(d);
+      if (!loc || !isFinite(loc.lat) || !isFinite(loc.lon)) throw 'geo';
+      cacheSet('sc-wx-loc', loc);
+      return loc;
+    }).catch(function () { return tryGeo(i + 1); });
   }
 
   // ───────────────────────── weather ───────────────────────────────
