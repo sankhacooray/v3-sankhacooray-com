@@ -47,7 +47,10 @@
   var reduceMotion = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  ready(start);
+  // NB: the actual kickoff — ready(start) — is deferred to the very END of
+  // this IIFE. The script loads `async`, so when it runs after the DOM is
+  // already parsed, ready() invokes start() synchronously; it must not fire
+  // until every `var` below (e.g. GEO_PROVIDERS) has been assigned.
 
   // ───────────────────────── orchestration ─────────────────────────
   function start() {
@@ -450,4 +453,9 @@
       document.addEventListener('DOMContentLoaded', fn);
     } else { fn(); }
   }
+
+  // Kick off only now that all of the above (CONFIG, GEO_PROVIDERS, every
+  // helper) is defined and assigned — safe whether the DOM is still parsing
+  // or already done.
+  ready(start);
 })();
