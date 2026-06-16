@@ -7,8 +7,8 @@
  *   <script async src="https://sankhacooray.com/js/sankha-weather.js"></script>
  *
  * What it does, entirely client-side and with NO API token:
- *   1. Finds the visitor's approximate location from their IP (ipwho.is —
- *      HTTPS, CORS, no key, no permission prompt). Falls back gracefully.
+ *   1. Finds the visitor's approximate location from their IP (GeoJS, with
+ *      an ipapi.co fallback — HTTPS, CORS, no key, no permission prompt).
  *   2. Fetches the CURRENT weather there from Open-Meteo (open-meteo.com —
  *      no key), reading the WMO weather_code + is_day flag.
  *   3. Paints a subtle, full-viewport canvas animation matching the real
