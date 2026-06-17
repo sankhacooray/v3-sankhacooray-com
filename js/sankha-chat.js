@@ -148,10 +148,49 @@
 
   // ──────────────────────────── messaging ─────────────────────────────
 
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // Minimal, safe Markdown → HTML for the bot's replies. Input is HTML-escaped
+  // first, so no raw tag from the model (or echoed user text) can inject markup.
+  // Supports **bold**, *italic*, `code`, [text](url), bare URLs, "- " bullets,
+  // and line breaks. Partial markup while streaming just shows literally until
+  // its closing token arrives.
+  function renderMarkdown(src) {
+    var keep = [];
+    function stash(html) { keep.push(html); return '\u0000' + (keep.length - 1) + '\u0000'; }
+
+    var t = escapeHtml(src);
+
+    // line-start bullets ("- " / "* ") → bullet glyph
+    t = t.replace(/(^|\n)[ \t]*[-*][ \t]+/g, '$1• ');
+    // inline code (protect its contents from the rules below)
+    t = t.replace(/`([^`]+)`/g, function (_, c) { return stash('<code>' + c + '</code>'); });
+    // markdown links [label](url) — http(s)/mailto only
+    t = t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|mailto:[^\s)]+)\)/g, function (_, label, url) {
+      return stash('<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + label + '</a>');
+    });
+    // bare URLs (stop before trailing punctuation)
+    t = t.replace(/(https?:\/\/[^\s<]+[^\s<.,;:!?)\]])/g, function (m) {
+      return stash('<a href="' + m + '" target="_blank" rel="noopener noreferrer">' + m + '</a>');
+    });
+    // emphasis (bold before italic)
+    t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    t = t.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+    // restore protected spans, then line breaks
+    t = t.replace(/\u0000(\d+)\u0000/g, function (_, i) { return keep[+i]; });
+    return t.replace(/\n/g, '<br>');
+  }
+
   function addMessage(who, text) {
     var row = document.createElement('div');
     row.className = 'scp-msg scp-' + who;
-    row.textContent = text || '';
+    // Bot replies are Markdown-rendered; user text stays literal (escaped).
+    if (who === 'bot') row.innerHTML = renderMarkdown(text);
+    else row.textContent = text || '';
     els.log.appendChild(row);
     scrollLog();
     return row;
@@ -225,7 +264,7 @@
                   botRow.textContent = '';
                 }
                 full += data.t;
-                botRow.textContent = full;
+                botRow.innerHTML = renderMarkdown(full);
                 scrollLog();
               }
               if (data.done) return finish();
@@ -304,6 +343,13 @@
       '.scp-bot{align-self:flex-start;background:#fff;color:#1a1a1f;',
       'border:1px solid #e4e6ea;border-bottom-left-radius:4px}',
       '.scp-err{color:#a02525;border-color:#f0c9c9;background:#fdf3f3}',
+      // rendered markdown inside bot replies
+      '.scp-msg strong{font-weight:600}',
+      '.scp-msg em{font-style:italic}',
+      '.scp-bot a{color:#2b6cb0;text-decoration:underline;word-break:break-word}',
+      '.scp-bot a:hover{color:#1d4e7e}',
+      '.scp-bot code{background:#eef0f3;border:1px solid #e1e4ea;border-radius:5px;',
+      'padding:0 4px;font:0.92em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}',
 
       '.scp-form{flex:0 0 auto;display:flex;align-items:flex-end;gap:8px;',
       'padding:10px;border-top:1px solid #e7e9ed;background:#fff}',
