@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1200px; height:630px; }
+  body {
+    font-family:'DM Sans',sans-serif; background:#0b0d12; color:#e9ecf2;
+    background-image:
+      radial-gradient(900px 480px at 14% -10%, rgba(52,214,165,0.14), transparent 60%),
+      radial-gradient(820px 560px at 106% 16%, rgba(91,140,255,0.12), transparent 60%);
+    padding:72px 80px; display:flex; flex-direction:column; justify-content:space-between;
+    position:relative; overflow:hidden;
+  }
+  .eyebrow { font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:500; color:#34d6a5; text-transform:uppercase; letter-spacing:4px; }
+  h1 { font-family:'Instrument Serif',serif; font-weight:400; font-size:92px; line-height:1.03; letter-spacing:-2px; margin-top:26px; }
+  h1 em { color:#34d6a5; font-style:italic; }
+  .lede { font-size:25px; color:#aab2c2; max-width:600px; margin-top:28px; line-height:1.45; }
+  .foot { display:flex; align-items:baseline; gap:18px; position:relative; z-index:2; }
+  .mark { font-family:'Instrument Serif',serif; font-size:40px; color:#34d6a5; letter-spacing:-0.5px; }
+  .by { font-family:'JetBrains Mono',monospace; font-size:17px; color:#6c7689; letter-spacing:1px; }
+  .url { margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:17px; color:#aab2c2; letter-spacing:1px; }
+
+  .avatar { position:absolute; right:96px; top:172px; width:286px; height:286px; z-index:1; }
+  .avatar img { width:100%; height:100%; border-radius:50%; object-fit:cover; }
+  .avatar .ring { position:absolute; inset:-10px; border-radius:50%; border:2px solid rgba(52,214,165,0.55);
+    box-shadow:0 0 60px -6px rgba(52,214,165,0.45), inset 0 0 40px rgba(11,13,18,0.4); }
+  .avatar .badge { position:absolute; right:2px; bottom:14px; background:#34d6a5; color:#06120d;
+    font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:500; letter-spacing:1px;
+    padding:5px 12px; border-radius:999px; box-shadow:0 6px 18px rgba(0,0,0,0.4); }
+</style>
+</head>
+<body>
+  <div class="avatar">
+    <img src="profile.jpg" alt="Sankha Cooray">
+    <span class="ring"></span>
+    <span class="badge">v3 · now</span>
+  </div>
+
+  <div>
+    <div class="eyebrow">developer · innovator</div>
+    <h1>At the seam of the<br><em>physical</em> &amp; digital.</h1>
+    <div class="lede">Software engineer across AR / MR, games, and applied R&amp;D.</div>
+  </div>
+
+  <div class="foot">
+    <span class="mark">sankhacooray</span>
+    <span class="by">Sankha Cooray</span>
+    <span class="url">sankhacooray.com</span>
+  </div>
+</body>
+</html>
