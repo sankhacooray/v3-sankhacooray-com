@@ -420,6 +420,18 @@ img { display: block; max-width: 100%; }
   mask: var(--ic) center / contain no-repeat;
 }
 
+/* One pooled set of skill chips, highlighted by the category filters. */
+.skills-pool { gap: 10px; }
+.skills-pool li {
+  transition: opacity .25s ease, color .2s ease, border-color .2s ease, background .2s ease;
+}
+.skills-pool li.dim { opacity: 0.28; }
+.skills-pool li.hl {
+  color: var(--text); border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface-2));
+}
+.skills-pool li.hl .t-ic { opacity: 1; }
+
 /* org cross-links in the experience timeline */
 .org-link {
   color: inherit; text-decoration: none;

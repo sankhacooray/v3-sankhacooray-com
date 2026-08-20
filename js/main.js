@@ -100,6 +100,28 @@
     });
   }
 
+  /* ---------------- Skill filters (highlight, don't hide) ---------------- */
+  var skillFilters = document.getElementById("skillFilters");
+  var skillChips = Array.prototype.slice.call(document.querySelectorAll("#skillsPool li"));
+  if (skillFilters) {
+    skillFilters.addEventListener("click", function (e) {
+      var b = e.target.closest(".filter");
+      if (!b) return;
+      skillFilters.querySelectorAll(".filter").forEach(function (f) {
+        var active = f === b;
+        f.classList.toggle("is-active", active);
+        f.setAttribute("aria-selected", active ? "true" : "false");
+      });
+      var cat = b.dataset.skill;
+      skillChips.forEach(function (c) {
+        if (cat === "all") { c.classList.remove("hl", "dim"); return; }
+        var match = c.dataset.skill === cat;
+        c.classList.toggle("hl", match);
+        c.classList.toggle("dim", !match);
+      });
+    });
+  }
+
   /* ---------------- Project tap-to-flip (touch) ---------------- */
   projects.forEach(function (p) {
     var card = p.querySelector(".proj-card");
