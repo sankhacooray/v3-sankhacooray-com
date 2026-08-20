@@ -313,7 +313,7 @@
       'background:#2b6cb0;box-shadow:0 6px 20px rgba(0,0,0,.28);',
       (reduce ? '' : 'transition:transform .2s ease,opacity .2s ease;'),
       '}',
-      '#sankha-chat-launcher:hover{transform:translateY(-2px)}',
+      '#sankha-chat-launcher:hover{filter:brightness(1.08)}',
       '#sankha-chat-launcher.scp-hidden{opacity:0;pointer-events:none;transform:scale(.8)}',
 
       // Panel

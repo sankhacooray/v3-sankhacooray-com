@@ -129,9 +129,9 @@ img { display: block; max-width: 100%; }
   color: var(--on-accent);
   box-shadow: 0 10px 28px -12px var(--accent);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -12px var(--accent); }
+.btn-primary:hover { box-shadow: 0 16px 34px -12px var(--accent); filter: brightness(1.06); }
 .btn-ghost { background: transparent; color: var(--text); border-color: var(--border-2); }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ===================== NAV ===================== */
 .nav {
@@ -380,7 +380,7 @@ img { display: block; max-width: 100%; }
   transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 @media (hover: hover) {
-  .pcard:hover { border-color: var(--border-2); transform: translateY(-3px); box-shadow: var(--shadow); }
+  .pcard:hover { border-color: var(--border-2); box-shadow: var(--shadow); }
 }
 .pcard-img { width: 100%; aspect-ratio: 1.9 / 1; background: var(--surface-2); border-bottom: 1px solid var(--border); overflow: hidden; }
 .pcard-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s ease; }
@@ -643,3 +643,33 @@ img { display: block; max-width: 100%; }
   .hero-social { flex-wrap: wrap; gap: 14px 20px; }
   .brand-name { display: none; }
 }
+
+/* ===================== AUTOMATION CHIP ===================== */
+/* Subtle "this is auto-generated" cue for automated sections. */
+.auto-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 16px; padding: 5px 12px; border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.02em;
+  color: var(--text-mute); background: var(--surface-2); border: 1px solid var(--border);
+}
+.auto-chip svg { opacity: 0.75; }
+.auto-chip .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 7px var(--accent);
+}
+
+/* ===== Shared network footer — legibility + separation across themes ===== */
+/* The CDN footer derives its colours from opacity-mixed text, which reads too
+   dim on the dark themes. Re-bind its theme vars to the site's own tuned
+   palette and give it a proper footer band. */
+#scn-footer .scn-footer {
+  --scn-fg: var(--text) !important;
+  --scn-dim: var(--text-dim) !important;
+  --scn-muted: var(--text-mute) !important;
+  --scn-accent: var(--accent) !important;
+  --scn-line: var(--border) !important;
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border);
+}
+#scn-footer .scn-inner { padding-top: 40px; padding-bottom: 34px; }
+#scn-footer .scn-social a:hover { transform: none !important; }
