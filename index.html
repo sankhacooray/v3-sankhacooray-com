@@ -803,51 +803,12 @@
 
     <!-- ===================== CONTACT ===================== -->
     <section class="section section-contact" id="contact">
-      <div class="contact-wrap">
-        <div class="contact-intro reveal">
+      <div id="scn-contact" class="reveal" data-source="v3.sankhacooray.com"
+           data-pitch="Have a project, a role, or just an idea worth" data-pitch-em="exploring?"
+           data-note="Drop me a message and I'll get back to you.">
+        <div>
           <span class="section-kicker">06 — Contact</span>
           <h2 class="section-title">Let's build something</h2>
-          <p>Have a project, a role, or just an idea worth exploring? Drop me a message and I'll get back to you. No phone numbers or inboxes to dig for — just send a note below.</p>
-          <ul class="contact-links">
-            <li><a href="https://www.linkedin.com/in/sankhacooray/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-            <li><a href="https://github.com/sankhacooray" target="_blank" rel="noopener">GitHub ↗</a></li>
-          </ul>
-        </div>
-
-        <form class="contact-form reveal" id="contactForm" novalidate>
-          <fieldset id="formFields">
-            <div class="field">
-              <label for="cf-name">Name</label>
-              <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="200" placeholder="Your name" />
-            </div>
-            <div class="field">
-              <label for="cf-email">Email</label>
-              <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com" />
-            </div>
-            <div class="field">
-              <label for="cf-message">Message</label>
-              <textarea id="cf-message" name="message" rows="5" required maxlength="5000" placeholder="What's on your mind?"></textarea>
-            </div>
-            <!-- Honeypot: hidden from humans, catches bots -->
-            <div class="hp" aria-hidden="true">
-              <label for="cf-company">Company</label>
-              <input id="cf-company" name="company" type="text" tabindex="-1" autocomplete="off" />
-            </div>
-          </fieldset>
-          <button class="btn btn-primary btn-submit" id="submitBtn" type="submit">
-            <span class="label">Send message</span>
-            <span class="spinner" aria-hidden="true"></span>
-          </button>
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-        </form>
-
-        <div class="contact-success" id="contactSuccess" hidden>
-          <div class="cs-check" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
-          </div>
-          <h3>Message sent</h3>
-          <p>Thanks for reaching out — I'll get back to you soon.</p>
-          <button class="btn btn-ghost" id="sendAnother" type="button">Send another message</button>
         </div>
       </div>
     </section>
@@ -892,7 +853,7 @@
           data-tagline="portfolio &amp; experiments"></script>
 
   <script src="js/main.js?v=20260820"></script>
-  <script src="js/contact.js?v=20260613"></script>
+  <script defer src="https://cdn.sankhacooray.com/js/sankha-contact.js?v=20261025"></script>
   <script src="js/network.js?v=20260613"></script>
   <script src="js/publications.js?v=20260616"></script>
   <script async src="js/sankha-weather.js?v=20260616c"></script>

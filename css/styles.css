@@ -457,66 +457,9 @@ img { display: block; max-width: 100%; }
 
 /* ===================== CONTACT ===================== */
 .section-contact { max-width: 1080px; }
-.contact-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px, 5vw, 64px); align-items: start; position: relative; }
-.contact-intro p { color: var(--text-dim); font-size: 16.5px; margin: 16px 0 24px; }
-.contact-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 18px; }
-.contact-links a { font-weight: 600; color: var(--accent); }
-.contact-links a:hover { text-decoration: underline; }
-
-.contact-form { display: block; }
-.contact-form[hidden] { display: none; }
-.contact-form fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 16px; }
-.contact-form fieldset[disabled] { opacity: .6; }
-.field { display: grid; gap: 7px; }
-.field label { font-size: 13.5px; font-weight: 600; color: var(--text-dim); }
-.field input, .field textarea {
-  width: 100%; padding: 13px 15px; border-radius: 11px;
-  background: var(--surface); border: 1px solid var(--border);
-  color: var(--text); font-family: inherit; font-size: 15px;
-  transition: border-color .2s ease, box-shadow .2s ease;
-  resize: vertical;
-}
-.field input:focus, .field textarea:focus {
-  outline: none; border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
-}
-.field input::placeholder, .field textarea::placeholder { color: var(--text-mute); }
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-
-.btn-submit { margin-top: 20px; width: 100%; }
-.btn-submit.is-loading { pointer-events: none; opacity: .9; }
-.spinner {
-  display: none; flex: 0 0 auto;
-  width: 1.05em; height: 1.05em;
-  border: 2px solid currentColor; border-right-color: transparent;
-  border-radius: 50%; animation: spin .7s linear infinite;
-}
-.btn-submit.is-loading .spinner { display: inline-block; }
-@keyframes spin { to { transform: rotate(360deg); } }
-.form-status { min-height: 20px; margin: 14px 0 0; font-size: 14px; color: #ef6b6b; }
-
-.contact-success {
-  grid-column: 1 / -1;
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-  padding: 48px 28px; border: 1px solid var(--border); border-radius: 18px;
-  background: var(--surface); box-shadow: var(--shadow);
-  animation: success-pop .45s cubic-bezier(.2,.8,.2,1);
-}
-.contact-success[hidden] { display: none; }
-@keyframes success-pop { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
-.cs-check {
-  width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--on-accent);
-  margin-bottom: 18px; box-shadow: 0 10px 28px -12px var(--accent);
-  animation: check-pop .5s .1s cubic-bezier(.2,1.4,.4,1) both;
-}
-@keyframes check-pop { from { transform: scale(0); } to { transform: scale(1); } }
-.contact-success h3 { font-size: 23px; font-weight: 700; }
-.contact-success p { color: var(--text-dim); margin: 8px 0 0; max-width: 360px; }
-.contact-success #sendAnother { margin-top: 24px; }
-@media (prefers-reduced-motion: reduce) {
-  .contact-success, .cs-check { animation: none; }
-}
+/* form: shared cdn.sankhacooray.com/js/sankha-contact.js (themed from the tokens above) */
+.section-contact { --serif: 'Sora', 'Inter', sans-serif; --text-muted: var(--text-mute); }
+.section-contact .scc-say { font-weight: 600; letter-spacing: -0.01em; }
 
 /* ===================== FOOTER ===================== */
 .footer { border-top: 1px solid var(--border); background: var(--bg-2); }
@@ -632,7 +575,7 @@ img { display: block; max-width: 100%; }
   .hero-inner { grid-template-columns: 1fr; gap: 44px; }
   .hero-photo { order: -1; justify-self: start; }
   .photo-frame { width: clamp(180px, 46vw, 240px); }
-  .about-grid, .contact-wrap { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
   .proj-grid { grid-template-columns: repeat(2, 1fr); }
   .rec-list { grid-template-columns: 1fr; }
 
