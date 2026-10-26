@@ -74,8 +74,37 @@
       notice(meParam[1] === 'on' ? 'Analytics off for this browser' : 'Analytics on for this browser');
     });
   }
-  var isMe = new RegExp('(?:^|;\\s*)' + ME_COOKIE + '=1').test(document.cookie);
+  var isMe = cookieVal(ME_COOKIE) === '1';
   if (isMe) setMe(true);
+  if (isMe && onNetwork) seenPing();
+
+  function cookieVal(name) {
+    var m = new RegExp('(?:^|;\\s*)' + name + '=([^;]*)').exec(document.cookie);
+    return m ? m[1] : '';
+  }
+
+  // Once a day an excluded browser tells the proxy (Me.js) it's still around,
+  // so the private console can list the owner's browsers and when each was
+  // last seen. Same id and label rules as cdn.sankhacooray.com/me.
+  function seenPing() {
+    var today = new Date().toISOString().slice(0, 10);
+    if (cookieVal('sankha_me_seen') === today) return;
+    var tail = '; domain=.sankhacooray.com; path=/; SameSite=Lax; Secure';
+    document.cookie = 'sankha_me_seen=' + today + tail + '; max-age=86400';
+    var id = cookieVal('sankha_me_id');
+    if (!/^[a-f0-9]{16}$/.test(id)) {
+      var b = new Uint8Array(8); crypto.getRandomValues(b);
+      id = Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+    }
+    document.cookie = 'sankha_me_id=' + id + tail + '; max-age=' + 400 * 86400;
+    var ua = navigator.userAgent;
+    var br = /Edg\//.test(ua) ? 'Edge' : /OPR\//.test(ua) ? 'Opera' : /SamsungBrowser/.test(ua) ? 'Samsung Internet'
+           : /CriOS|Chrome\//.test(ua) ? 'Chrome' : /FxiOS|Firefox\//.test(ua) ? 'Firefox' : /Safari\//.test(ua) ? 'Safari' : 'Browser';
+    var os = /iPhone/.test(ua) ? 'iPhone' : /iPad/.test(ua) ? 'iPad' : /Android/.test(ua) ? 'Android'
+           : /Mac OS X|Macintosh/.test(ua) ? 'macOS' : /Windows/.test(ua) ? 'Windows' : /Linux/.test(ua) ? 'Linux' : '';
+    new Image().src = CONFIG.PROXY_URL + '?source=me&state=seen&id=' + id +
+      '&label=' + encodeURIComponent(br + (os ? ' · ' + os : '')) + '&host=' + encodeURIComponent(location.hostname);
+  }
 
   // ───────────────────────────── gtag ─────────────────────────────
   (function bootGtag() {
