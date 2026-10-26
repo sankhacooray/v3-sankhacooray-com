@@ -1,9 +1,13 @@
 /**
  * sankha-analytics.js — one shared script for the whole sankhacooray.com
- * network. Hosted on the main site and loaded by every page (including
- * subdomains, cross-origin) with a single line before </body>:
+ * network, loaded by every page (including subdomains, cross-origin) with a
+ * single line before </body>:
  *
  *   <script async src="https://sankhacooray.com/js/sankha-analytics.js"></script>
+ *
+ * Two identical copies are served: this one (cdn.sankhacooray.com) and
+ * v3-sankhacooray-com/js/sankha-analytics.js (the apex URL above, which the
+ * pages load). Edit here, then copy it over the v3 file.
  *
  * It does two things:
  *   1. Boots Google Analytics (gtag) against the one shared GA4 property,
@@ -24,23 +28,60 @@
 (function () {
   'use strict';
 
+  // Per-page overrides via the loading <script> tag's data-* attributes:
+  //   data-measurement-id="G-XXXX"  → report into a different GA4 property
+  //                                    (e.g. a dedicated medical-suite property)
+  //   data-badge="off"              → GA tracking only, no public visitor badge
+  //                                    (used on the login-gated suite apps)
+  var self = document.currentScript || document.querySelector('script[src*="sankha-analytics.js"]');
+  var idAttr = self && self.getAttribute('data-measurement-id');
+  var badgeAttr = self && self.getAttribute('data-badge');
+
   var CONFIG = {
-    // GA4 Measurement ID for the shared network property. Format: G-XXXXXXXXXX.
+    // GA4 Measurement ID. Defaults to the shared network property; override per
+    // page with data-measurement-id. Format: G-XXXXXXXXXX.
     // Get it from GA4 Admin → Data Streams → your web stream.
-    MEASUREMENT_ID: 'G-EPVPJGS2JL',
+    MEASUREMENT_ID: idAttr || 'G-EPVPJGS2JL',
 
     // The Apps Script web-app /exec URL (the analytics proxy deployment).
     // Get it after `npm run deploy` in analytics-sankhacooray-com.
     PROXY_URL: 'https://script.google.com/macros/s/AKfycbwvNZxtG3yOd2YUCDjRxUt9x9BcDP2St-ywC8WcecI_TcqirM3crgTW0qaR_712JTdhdw/exec',
 
-    // Set false to ship gtag tracking without the public visitor badge.
-    SHOW_BADGE: true
+    // Public visitor badge. On by default; set data-badge="off" to ship gtag only.
+    SHOW_BADGE: badgeAttr !== 'off'
   };
+
+  // ───────────────────────── who counts ──────────────────────────
+  // Only real network hosts are tracked: workers.dev previews, localhost and
+  // file previews never reach GA.
+  //
+  // Owner opt-out: open any network page with ?me=on once per browser and GA
+  // stops counting that browser on every subdomain (the cookie lives on
+  // .sankhacooray.com); ?me=off undoes it. The cookie is re-written on each
+  // visit because Safari caps script-set cookies at 7 days.
+  var ME_COOKIE = 'sankha_me';
+  var onNetwork = /(^|\.)sankhacooray\.com$/.test(location.hostname);
+
+  function setMe(on) {
+    document.cookie = ME_COOKIE + '=' + (on ? '1' : '') + '; domain=.sankhacooray.com; path=/; max-age=' +
+      (on ? 400 * 86400 : 0) + '; SameSite=Lax; Secure';
+  }
+
+  var meParam = /[?&]me=(on|off)\b/.exec(location.search);
+  if (meParam && onNetwork) {
+    setMe(meParam[1] === 'on');
+    ready(function () {
+      notice(meParam[1] === 'on' ? 'Analytics off for this browser' : 'Analytics on for this browser');
+    });
+  }
+  var isMe = new RegExp('(?:^|;\\s*)' + ME_COOKIE + '=1').test(document.cookie);
+  if (isMe) setMe(true);
 
   // ───────────────────────────── gtag ─────────────────────────────
   (function bootGtag() {
     var id = CONFIG.MEASUREMENT_ID;
     if (!id || id.indexOf('XXXX') !== -1) return;   // not configured yet
+    if (!onNetwork || isMe) return;                 // preview host, or the owner
 
     var s = document.createElement('script');
     s.async = true;
@@ -79,6 +120,18 @@
       })
       .catch(function () { /* fail soft: no badge */ });
   });
+
+  // Short confirmation pill for ?me=on / ?me=off, gone after 4 s.
+  function notice(text) {
+    var el = document.createElement('div');
+    el.textContent = text;
+    el.setAttribute('role', 'status');
+    el.style.cssText = 'position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:2147483001;' +
+      'padding:8px 14px;border-radius:999px;font:500 13px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;' +
+      'color:#e8e8ee;background:rgba(18,18,22,.9);box-shadow:0 4px 16px rgba(0,0,0,.3);';
+    document.body.appendChild(el);
+    setTimeout(function () { el.remove(); }, 4000);
+  }
 
   function num(n) {
     n = n || 0;
