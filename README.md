@@ -37,6 +37,15 @@ images/                 # profile + project thumbnails
 icon.svg, manifest.webmanifest, CNAME
 ```
 
+## Shared scripts (source → build)
+
+`js/sankha-analytics.js` and `js/sankha-weather.js` are loaded by many network
+sites at fixed apex URLs and are served **minified**. Their readable source is
+in `js/src/`; it is a copy of the canonical source in `cdn-sankhacooray-com/js/src/`.
+Edit there first, copy the file here, run `./build.sh` (pinned esbuild), and
+check `cmp js/<name>.js ../cdn-sankhacooray-com/js/<name>.js` reports no
+difference before pushing both repos.
+
 ## Deploy
 
 Static files on GitHub Pages. `CNAME` points `v3.sankhacooray.com` at the Pages

@@ -31,6 +31,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Sankha" />
@@ -48,14 +49,18 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=20260820" />
+  <!-- Fonts load without blocking first paint (display=swap; system fallback until they arrive) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+  <!-- LCP: the hero photo -->
+  <link rel="preload" as="image" type="image/webp" href="images/profile-400.webp" imagesrcset="images/profile-280.webp 280w, images/profile-400.webp 400w" imagesizes="(max-width: 733px) 220px, (max-width: 1133px) 30vw, 340px" fetchpriority="high" />
+  <link rel="stylesheet" href="css/styles.css?v=20261031" />
 </head>
 <body>
 
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
-    <a class="brand" href="#top" aria-label="Sankha Cooray — home">
+    <a class="brand" href="#top">
       <span class="brand-mark" aria-hidden="true">SC</span>
       <span class="brand-name">Sankha Cooray</span>
     </a>
@@ -97,7 +102,7 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero" id="hero">
       <div class="hero-inner">
-        <div class="hero-text reveal">
+        <div class="hero-text">
           <p class="eyebrow">Research Engineer · Founder · Innovator</p>
           <h1 class="hero-title">Building at the seam of the<br /><span class="grad">physical &amp; digital</span>.</h1>
           <p class="hero-sub">
@@ -111,9 +116,12 @@
           </ul>
         </div>
 
-        <div class="hero-photo reveal">
+        <div class="hero-photo">
           <div class="photo-frame">
-            <img src="images/profile.jpg" alt="Sankha Cooray" width="400" height="400" loading="eager" />
+            <picture>
+              <source type="image/webp" srcset="images/profile-280.webp 280w, images/profile-400.webp 400w" sizes="(max-width: 733px) 220px, (max-width: 1133px) 30vw, 340px" />
+              <img src="images/profile.jpg" alt="Sankha Cooray" width="400" height="400" loading="eager" fetchpriority="high" />
+            </picture>
           </div>
           <div class="photo-badge">
             <span class="pb-num">10+</span>
@@ -856,7 +864,7 @@
   <script defer src="https://cdn.sankhacooray.com/js/sankha-contact.js?v=20261025"></script>
   <script src="js/network.js?v=20260613"></script>
   <script src="js/publications.js?v=20260616"></script>
-  <script async src="js/sankha-weather.js?v=20260616c"></script>
+  <script async src="js/sankha-weather.js?v=20261031"></script>
   <script async src="js/sankha-chat.js?v=20260617b"></script>
 <script async src="https://sankhacooray.com/js/sankha-analytics.js"></script>
 </body>

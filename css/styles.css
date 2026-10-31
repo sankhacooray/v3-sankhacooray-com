@@ -16,7 +16,7 @@
   --border-2:  rgba(255,255,255,0.16);
   --text:      #e9ecf2;
   --text-dim:  #aab2c2;
-  --text-mute: #6c7689;
+  --text-mute: #80899a;
   --accent:    #34d6a5;
   --accent-2:  #5b8cff;
   --on-accent: #06120d;
@@ -36,7 +36,7 @@
   --border-2:  rgba(255,255,255,0.18);
   --text:      #efeaf8;
   --text-dim:  #b6abce;
-  --text-mute: #7b6f95;
+  --text-mute: #8b80a3;
   --accent:    #a78bfa;
   --accent-2:  #f472b6;
   --on-accent: #160a1f;
@@ -56,7 +56,7 @@
   --border-2:  rgba(15,23,42,0.18);
   --text:      #0f172a;
   --text-dim:  #475569;
-  --text-mute: #94a3b8;
+  --text-mute: #636f83;
   --accent:    #2563eb;
   --accent-2:  #0ea5e9;
   --on-accent: #ffffff;
@@ -76,7 +76,7 @@
   --border-2:  rgba(67,49,30,0.22);
   --text:      #2c2117;
   --text-dim:  #6b5a47;
-  --text-mute: #a08c75;
+  --text-mute: #766553;
   --accent:    #c2410c;
   --accent-2:  #b45309;
   --on-accent: #fff7ed;
@@ -272,6 +272,7 @@ img { display: block; max-width: 100%; }
   background: var(--surface);
 }
 .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.photo-frame picture { display: block; width: 100%; height: 100%; }
 .photo-badge {
   position: absolute; bottom: -18px; left: -18px;
   display: flex; flex-direction: column; align-items: center;
